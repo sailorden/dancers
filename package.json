@@ -10,11 +10,11 @@
   },
   "author": "techmsi",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.2"
   },
   "scripts": {
     "test": "make test",
-    "start": "node server.js"
+    "start": "foreman start web"
   },
   "keywords": [
     "dancers",
