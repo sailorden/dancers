@@ -1,3 +1,87 @@
+html{
+  font-size: 62.5%;
+}
+body{
+  background-color: #111;
+  color: #111;
+  font-family: 'Josefin Slab', serif;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+/* Copyright */
+footer{
+  color: #fff;
+  text-align: center;
+}
+a {
+  color: #ffcc11;
+  text-decoration: none;
+}
+/* Headline */
 h1 {
   color :#00bbff;
+  padding-left: 0.25rem;
+}
+/* Style */
+h2 {
+  display: none;
+  border-bottom: 1px solid #222;
+}
+/* Name */
+h3{
+  font-size: 2rem;
+}
+/* Timing */
+h3 span {
+  font-size: 1rem;
+  background-color: #111;
+  border: 1px solid #555;
+  border-radius: 0.35rem;
+  color :#ffcc11;
+  padding: .25rem;
+}
+
+/* Menu */
+nav {
+  display: block;
+  color: #fff;
+  width: 100%;
+}
+nav a {
+  background-color: #111;
+  border: 1px solid #555;
+  border-radius: 0.35rem;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.8rem;
+  margin: .75rem auto;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+}
+nav a.active {
+  background-color: #00bbff;
+}
+/* Section */
+section {
+  background-color: #fff;
+  padding: 1.5rem;
+}
+article{
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 16rem;
+}
+/* Levels */
+ul li{
+  background-color: #111;
+  border: 1px solid #555;
+  border-radius: 0.35rem;
+  color: #fff;
+  display: block;
+  font-size: 1.2rem;
+  margin: .75rem auto;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
 }

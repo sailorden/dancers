@@ -6,10 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nunjucks = require('nunjucks');
 var filters = require('./views/filters');
+var cors = require("cors");
 
 var routes = require('./routes/index');
 
 var app = express();
+
+/* Mongo */
+require( './db' ); //Mongo
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,6 +21,7 @@ app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -42,6 +47,8 @@ app.use(function(req, res, next) {
 
 // Routes
 app.use('/', routes);
+app.use('/api', routes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -75,7 +82,7 @@ app.use(function(err, req, res, next) {
 });
 
 // Setup server
-var server = app.listen(process.env.PORT || 3000, function () {
+var server = app.listen(process.env.PORT || 5000, function () {
 
   var host = server.address().address
   var port = server.address().port
