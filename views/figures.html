@@ -8,23 +8,14 @@
   </head>
   <body>
     <h1>Dancers - {{ title }}</h1>
-    <nav>
-      <a href="{{h|host}}/dances/am" class="{{'active' if (title == 'American')}}">American</a>
-      <a href="{{h|host}}/dances/intl" class="{{'active' if (title == 'International')}}">International</a>
-    </nav>
     <section>
     {% for dance in dances %}
       <article>
-        <h2><small>Style:</small> {{ dance.style }}</h2>
-        <h3>{{ dance.name }} <span> {{ dance.timing }}</span></h3>
-        <p>{{ dance.description }}</p>
-        <h4>Levels({{dance.levels|length}})</h4>
+        <h3>{{ dance.name }} <span> {{ dance.level }}</span></h3>
+        <h3>Variations({{dance.variations|length}})</h4>
         <ul>
-          {% for level in dance.levels %}
-          {% for pb in level['pre-bronze'] %}
-            <li>{{ level['pre-bronze'] }}</li>
-            <li>{{ pb.figure }}</li>
-          {% endfor %}
+          {% for variation in dance.variations %}
+            <li>{{ variation['pre-bronze'] }}</li>
           {% endfor %}
         </ul>
       </article>

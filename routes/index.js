@@ -22,11 +22,19 @@ router.get('/api', function(req, res) {
 // Return json from mongo database
 router.get('/dances/am', getAllAmDances);
 router.get('/dances/intl', getAllIntlDances);
+router.get('/dances/', getAllFigures);
 
 function getAllAmDances(req, res) {
   Dance.American.find({}, { _id:0 }, function (err, docs) {
       if (err) throw err;
       res.render('views/index.html', { title:"American", dances:docs });
+    });
+}
+
+function getAllFigures(req, res) {
+  Dance.Figures.find({}, { _id:0 }, function (err, docs) {
+      if (err) throw err;
+      res.render('views/figures.html', { title:"Figures", dances:docs });
     });
 }
 
